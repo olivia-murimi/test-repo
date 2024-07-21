@@ -1,0 +1,12 @@
+
+.body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color:pink;
+    display: flex;
+}
+
+.gallery img{
+    width:400px;
+    height:250px;
+}
