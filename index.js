@@ -1,6 +1,6 @@
 const btnEl = document.getElementById("btn")
 const errormessageEl = document.getElementById("errormessage")
- const galleryEl = document.getElementById("gallery")
+ const galleryEl = document. getElementById("gallery")
  async function fetchimage(){
     const inputValue = document.getElementById("input").value;
 
@@ -14,20 +14,19 @@ const errormessageEl = document.getElementById("errormessage")
     imgs = "";
 
     try{
-      await fetch(`https://api.unsplash.com/photos/?per_page=${inputValue}&page=1&{Math.round (Math.random() * 1000
-
-        )}&
-        client_id=5H2wZWtiq6G4_7CM4qqbS2yHw8CdUDXJvlf3q0pDqnw`
+      btnEl.style.display ="none"
+      await fetch(`https://api.unsplash.com/photos/?per_page=${inputValue}&page=1&{Math.round(Math.random() * 1000)}&client_id=5H2wZWtiq6G4_7CM4qqbS2yHw8CdUDXJvlf3q0pDqnw`
 
       ).then((res)=> 
-        res.json().then((data)=>{
-        if(data){
+        res.json().then((data) => {
+        if (data) {
           data.forEach((pic) => {
            imgs += `
            <img src=${pic.urls.small} alt="image"/>
            `;
            galleryEl.style.display = "block";
-           galleryEl.innerHTML = imgs ;
+           galleryEl.innerHTML = imgs;
+           btnEl.style.display = "block";
           });
           
         }
@@ -37,11 +36,13 @@ const errormessageEl = document.getElementById("errormessage")
     }catch (error){
       errormessageEl.style.display = "block";
       errormessageEl.innerHTML = "An error happened, try again later";
+      btnEl.style.display = "block"
     }
   
 }
 
 btnEl.addEventListener("click", fetchimage)
+
 
 
 
