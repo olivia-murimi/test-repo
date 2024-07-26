@@ -14,7 +14,9 @@ const errormessageEl = document.getElementById("errormessage")
     imgs = "";
 
     try{
-      btnEl.style.display ="none"
+      btnEl.style.display ="none";
+      const loading = `<img src="spinner.svg />"`
+      galleryEl.innerHTML = loading
       await fetch(`https://api.unsplash.com/photos/?per_page=${inputValue}&page=1&{Math.round(Math.random() * 1000)}&client_id=5H2wZWtiq6G4_7CM4qqbS2yHw8CdUDXJvlf3q0pDqnw`
 
       ).then((res)=> 
@@ -27,12 +29,12 @@ const errormessageEl = document.getElementById("errormessage")
            galleryEl.style.display = "block";
            galleryEl.innerHTML = imgs;
            btnEl.style.display = "block";
+           errormessageEl.style.dispaly = "none"
           });
           
         }
       })
      ); 
-     errormessageEl.style.dispaly = "none"
     }catch (error){
       errormessageEl.style.display = "block";
       errormessageEl.innerHTML = "An error happened, try again later";
@@ -42,6 +44,7 @@ const errormessageEl = document.getElementById("errormessage")
 }
 
 btnEl.addEventListener("click", fetchimage)
+
 
 
 
