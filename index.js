@@ -39,11 +39,13 @@ const errormessageEl = document.getElementById("errormessage")
       errormessageEl.style.display = "block";
       errormessageEl.innerHTML = "An error happened, try again later";
       btnEl.style.display = "block"
+      galleryEl.style.display = "none";
     }
   
 }
 
 btnEl.addEventListener("click", fetchimage)
+
 
 
 
