@@ -1,15 +1,19 @@
 const inputEl = document.getElementById("input")
 
+async function fetchAPI(word){
 
-
-function fetchAPI(word){
- const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
-  const result = fetch(url).then((res) => res.jon ());
+try {
+    const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+  const result = await fetch(url).then((res) => res.jon ());
+} catch (error) {
+  console.log(error);
+ 
 }
 inputEl.addEventListener("keyup", (e)=>{
  if(e.target.value && e.key === "Enter"){
     fetchAPI(e.target.value)
  }
 
-})
+});
+
 
