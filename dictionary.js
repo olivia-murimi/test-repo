@@ -15,12 +15,15 @@ try {
   const result = await fetch(url).then((res) => res.jon ());
 
    if(result.title){
+    meaningContainerEl.style.display = "block"
+    infoTextEl.style.display = "none";
     titleEl.innerText = word
     meaningEl.innerText = "N/A";
     audioEl.style.display = "none";
-   }else{
+   } else{
     infoTextEl.style.display = "none"
   meaningContainerEl.style.display = "block";
+   audio.style.display = "inline-flex"
    titleEl.innerText = result[0].word
    meaningEl.innerText = result[0].meanings[0].definitions[0].definition;
    audioEl.src = result[0].phonetics[0].audio;
@@ -37,6 +40,7 @@ inputEl.addEventListener("keyup", (e)=>{
  }
 
 });
+
 
 
 
