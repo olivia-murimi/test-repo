@@ -29,7 +29,7 @@ try {
    }
 } catch (error) {
   console.log(error);
-  `infoTextEl.innerText = 'an error happened try again later';`
+  infoTextEl.innerText = 'An error happened, try again later';
  }
 }
 
@@ -39,6 +39,7 @@ inputEl.addEventListener("keyup", (e)=>{
  }
 
 });
+
 
 
 
